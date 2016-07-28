@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/whatwasthis.unity
-  isLoaded: 1
-  isActive: 1
