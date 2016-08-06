@@ -13,8 +13,9 @@ public class Bob : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        direction = true;
-        time = 0f; 
+        //start in a random position and direction
+        time = duration*Random.value;
+        direction = Random.value > 0.5 ? true : false;
     }
 
     void FixedUpdate()
