@@ -13,8 +13,5 @@ public class StartOverlay : MonoBehaviour {
 	
 	}
 
-    public void pickOneUp()
-    {
-        this.gameObject.SetActive(false);
-    }
+
 }

@@ -4,11 +4,14 @@ using System.Collections;
 public class PlayerPickupsAndScoring : MonoBehaviour {
 
     public Overlay overlay;
-    private int score;
+    private int remaining;
+    public PickupsRemaining pickupsRemaining;
+    private int totalPickups;
 
     // Use this for initialization
     void Start(){
-        score = 0;
+        remaining = pickupsRemaining.getPickupsRemaining();
+        overlay.setInitialScore(remaining);
     }
 
     void OnTriggerEnter(Collider other){
@@ -16,14 +19,19 @@ public class PlayerPickupsAndScoring : MonoBehaviour {
             eatPickup(other);
         }
         if (other.gameObject.CompareTag("Ghost")){
-            //BroadcastMessage or SendMessage game over 
+            overlay.gameOver(); 
         }
     }
 
     void eatPickup(Collider other){
         other.gameObject.SetActive(false);
-        score++;
-        overlay.updateScore(score);
+        remaining--;
+        overlay.updateScore(remaining);
+        if (remaining < 170) //TODO change to ==0
+        {
+            overlay.win();
+        }
     }
+
 
 }
