@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Ghost : MonoBehaviour {
     
-    public GhostPathJunction currentJunction; 
+    public GhostPathJunction currentJunction;
     public float speed;
 
     private bool moving;
     private Vector3 startPos;
     private Vector3 destPos;
-
+    private GhostPathJunction prevJunction;
     private Vector3 distanceBetweenJunctions; 
 
 	// Use this for initialization
@@ -27,7 +27,9 @@ public class Ghost : MonoBehaviour {
 	}
 
     void goToNextJunction(){
-        currentJunction = currentJunction.getNextJunction();
+        GhostPathJunction tmp = currentJunction.getNextJunction(prevJunction);
+        prevJunction = currentJunction;
+        currentJunction = tmp;
         moving = true;
     }
 
