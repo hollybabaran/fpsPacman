@@ -27,7 +27,7 @@ public class PlayerPickupsAndScoring : MonoBehaviour {
         other.gameObject.SetActive(false);
         remaining--;
         overlay.updateScore(remaining);
-        if (remaining < 170) //TODO change to ==0
+        if (remaining == 0)
         {
             overlay.win();
         }
