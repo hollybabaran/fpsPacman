@@ -14,8 +14,10 @@ public class Ghost : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        moving = false; 
-	}
+        moving = false;
+        transform.position = currentJunction.transform.position;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
