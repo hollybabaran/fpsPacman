@@ -12,14 +12,7 @@ public class GhostPathJunction : MonoBehaviour {
         rnd = new System.Random();
         msh = GetComponent<MeshRenderer>();
         msh.enabled = false;
-        GhostPathJunction[] tmp = new GhostPathJunction[];
-        foreach(GhostPathJunction n in neighbours)
-        {
-            if(n!= null)
-            {
-                 
-            }
-        }
+        
             
             
            // (c => c != null).ToArray();
