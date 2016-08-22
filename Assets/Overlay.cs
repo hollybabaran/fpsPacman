@@ -33,8 +33,10 @@ public class Overlay : MonoBehaviour {
 
     public void gameOver()
     {
-        scoreOverlay.gameObject.SetActive(false);
-        gameOverLay.gameObject.SetActive(true);
+        if (!winOverlay.gameObject.activeSelf) {
+            scoreOverlay.gameObject.SetActive(false);
+            gameOverLay.gameObject.SetActive(true);
+        }
     }
 
     public void win()
